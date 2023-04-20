@@ -1,0 +1,18 @@
+input{
+  background-color: azure;
+  border: 2px outrgb(0, 0, 0)lack;
+
+}
+button{
+  background-color: green;
+  color: white;
+}
+form{
+  margin: 0cm 2cm;
+  padding:20px;
+  border-color: black;
+  border-style: outset;
+  border-radius: 10px;
+  background-color: chartreuse;
+
+}

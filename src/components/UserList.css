@@ -1,0 +1,12 @@
+.div{
+  margin:0cm 2cm;
+  border:3px inset black;
+  background-color: bisque;
+  border-radius:7px;
+}
+.li{
+  margin: 3px;
+  border:1px solid brown;
+  background-color: aquamarine;
+  border-radius: 5px;
+}
