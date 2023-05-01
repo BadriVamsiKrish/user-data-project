@@ -25,6 +25,9 @@ import React,{useState,useRef} from 'react'
 import TodoList from './TodoList';
 
 const App = () => {
+  const [Table1,setTable1]=useState([]);
+  const [Table2,setTable2]=useState([]);
+  const [Table3,setTable3]=useState([]);
   const table=useRef('null');
   const [taskid,setTaskid] = useState("");
   const [taskprice,setTaskprice] = useState("");
@@ -49,15 +52,27 @@ const App = () => {
       str+=i+'-';
 
     }
+    if(str.includes('Table 1')){
+      setTable1([...Table1,str]);
+      //console.log(Table1,Table2,Table3);
+    }
+    if(str.includes('Table 2')){
+      setTable2([...Table2,str]);
+      //console.log(Table1,Table2,Table3)
+    }
+    if(str.includes('Table 3')){
+      setTable3([...Table3,str]);
+      //console.log(Table1,Table2,Table3)
+    }
     const newTodos = [...todos,str];
     setTodos(newTodos);
     setTaskid("");
     setTaskprice("");
     setTaskdish("");
   }
-  const deleteHandler = (indexValue) =>{
-    const newTodos = todos.filter((todo,index) => index !== indexValue);
-    setTodos(newTodos);
+  const deleteHandler = (indexValue,table,setTab) =>{
+    const newTodos = table.filter((todo,index) => index !== indexValue);
+    setTab(newTodos);
   }
   return (
     <div>
@@ -80,7 +95,7 @@ const App = () => {
               </select>
               <input type="submit" value="Add" name="Add"/>
             </form>
-            <TodoList todolist={todos} deleteHandler={deleteHandler}/>
+            <TodoList setTable3={setTable3} setTable2={setTable2} setTable1={setTable1} Table3={Table3} Table2={Table2} Table1={Table1}todolist={todos} deleteHandler={deleteHandler}/>
           </div>
         </div>
       </center>
